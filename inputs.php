@@ -17,7 +17,7 @@
       
      <nav class="header__menu">
        <a class="header__links" href="#pricing">Pricing</a>
-       <a class="header__links" href="inputs.php">Featuressss</a>
+       <a class="header__links" href="inputs.php">Features</a>
        <a class="header__links" href="#contact">Contact</a>
    
      </nav>
