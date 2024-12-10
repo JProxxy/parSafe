@@ -17,6 +17,7 @@
 
 body{
     overflow-x: hidden;
+    overflow-y: hidden;
    background-color: #faf8f8;
     font-family: 'Open Sans', sans-serif;
 
