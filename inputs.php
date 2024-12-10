@@ -302,7 +302,7 @@ function handleSelectChange() {
   
       <div class="footer-social">
         <h4>Follow Us</h4>
-        <a href="#" class="social-icon">Facebooks</a>
+        <a href="#" class="social-icon">Facebook</a>
         <a href="#" class="social-icon">Twitter</a>
         <a href="#" class="social-icon">LinkedIn</a>
       </div>
