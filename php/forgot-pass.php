@@ -36,7 +36,7 @@
        
        
        
-        <p>Don't have an account? <a href="#register">Register here</a></p>
+      <p>Don't have an account? <a href="php/sign-up.php">Register here</a></p>
       </div>
     </div>
   
