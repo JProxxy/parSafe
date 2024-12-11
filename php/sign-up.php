@@ -41,7 +41,7 @@
         <button class="login-button">Login</button>
         <a href="#forgot" class="login-forgot">Forgot Password?</a>
       
-        <p>Don't have an account? <a href="#register">Register here</a></p>
+        <p>Don't have an account? <a href="php/sign-up.php">Register here</a></p>
       </div>
     </div>
   
