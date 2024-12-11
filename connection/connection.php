@@ -1,13 +1,12 @@
 <?php
 // Define database credentials
-$host = "localhost";  // Usually 'localhost' for local XAMPP setup
-$username = "root";    // Default username for XAMPP
-$password = "";        // Default password for XAMPP is empty
-$dbname = "parasafe_db"; // Your database name
-$port = 4306; // The custom port you're using
+$host = '18.139.255.32';
+$dbname = 'parasafe_db';
+$username = 'root';
+$password = 'Pa$$word1';
  
 // Establish the connection
-$conn = mysqli_connect($host, $username, $password, $dbname, $port);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {

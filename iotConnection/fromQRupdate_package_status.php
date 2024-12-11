@@ -25,19 +25,19 @@ if (isset($_POST['package_number']) && isset($_POST['lock_state']) && isset($_PO
 
     // Prepare the time_unlock field
     $time_unlock = ($lock_state === 'unlock') ? date('Y-m-d H:i:s') : null;
-    $status = ($lock_state === 'unlock') ? 'delivered' : 'ongoing'; // Set status to 'delivered' when unlocked, else 'ongoing'
 
-    // SQL query to update lock_state, time_unlock, attempt, and status
-    $sql = "UPDATE forms SET lock_state = ?, time_unlock = ?, attempt = ?, status = ? WHERE package_number = ?";
+    // SQL query to update lock_state, time_unlock, and attempt
+    $sql = "UPDATE forms SET lock_state = ?, time_unlock = ?, attempt = ? WHERE package_number = ?";
 
     // Prepare the statement
     $stmt = $conn->prepare($sql);
     if ($stmt) {
-        $stmt->bind_param('ssiss', $lock_state, $time_unlock, $attempt, $status, $package_number);
+        // Bind the parameters
+        $stmt->bind_param('ssii', $lock_state, $time_unlock, $attempt, $package_number); // 'i' for integer, 's' for string
 
         // Execute the query
         if ($stmt->execute()) {
-            echo json_encode(["status" => "success", "message" => "Package lock state, time_unlock, attempt, and status updated successfully"]);
+            echo json_encode(["status" => "success", "message" => "Package lock state, time_unlock, and attempt updated successfully"]);
         } else {
             echo json_encode(["status" => "error", "message" => "Failed to update package status"]);
         }
@@ -45,8 +45,6 @@ if (isset($_POST['package_number']) && isset($_POST['lock_state']) && isset($_PO
     } else {
         echo json_encode(["status" => "error", "message" => "Failed to prepare statement"]);
     }
-} else {
-    echo json_encode(["status" => "error", "message" => "Missing required fields"]);
 }
 
 // Close connection
